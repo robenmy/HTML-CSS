@@ -1,0 +1,109 @@
+/* con el asterico creamos una regla
+en este caso para que los elementos sus margenes 
+esten en 0 y no vengan con las propiedades por defecto*/
+*{
+    margin:0px;
+    padding:0px; /*margen interior de una caja*/
+}
+/*En css todo elemento se considera una caja*/
+
+body{
+    background: lightgray;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#container{
+    width: 1100px; /* 70%*/
+    margin: 0 auto; /*margen laterales 0 y auto centra*/
+    border: 1px solid black;
+
+
+}
+
+header{
+    background: red;
+    height: 100px;
+    width: 100%; /*100% de la caja contenedora*/
+    margin: 0;
+    text-align: center; /*centrar texto*/
+    line-height: 100px; /*centra el texto verticalmente. Misma altura de la caja*/
+    color: white; /*texto*/
+    border-bottom: 3px dashed black;
+}
+
+nav{
+    background: lightblue;
+    height: 50px;/*altura*/
+}
+
+nav ul li{  /*seleccion grupal de elementos*/
+    float: left; /*hace que estos elementos se alineen a la izquierda*/
+    list-style: none; /*quita los estilos que vienen por defecto*/
+    margin: 10px;/*para separa cada elemento*/
+
+}
+
+.clearfix{  /*para evitar que el texto se junte con la parte del menu*/
+
+    clear: both; /*para cuando floten los elementos
+                   los de abajos se queden en su sitio*/
+
+}
+
+#content{
+    float: left; /*la caja se coloque a la izquierda*/
+    width: calc(80% - 80px); /*restamos el espacion del padding agregado*/
+    min-height: 500px;
+    background: green;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+aside{
+    float:left; /*tambien se alinea a la izquierda*/
+    width: calc(20% - 20px); /*restar los 20x del padding agregado para evitar que se anche la caja*/
+    min-height: 500px;
+    background: orange;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+}
+
+/*es necesario separar el footer con clear ya que content and aside ocupan el 100%*/
+footer{
+    background: black;
+    color: white;
+    text-align: center;
+    height: 50px;
+    line-height: 50px; /*centrar verticalmente*/
+    
+    border: 2px solid black;
+}
+
+.article{
+    color: white;
+    margin-top: 15;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.article:first-child{
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.article > h2{  /*seleccionar h2 dentro de article*/
+    font-size: 30px;
+
+}
+
+/*
+---------   Notas ------------------
+La propiedad CSS clear especifica si un elemento puede estar al lado de elementos flotantes 
+que lo preceden o si debe ser movido (cleared) debajo de ellos. La propiedad clear aplica a 
+ambos elementos flotantes y no flotantes.
+
+
+
+*/
