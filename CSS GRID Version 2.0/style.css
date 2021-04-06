@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;   /*each element will have margin 0 as default*/
+}
+
+body {
+    background: #E9ECF4;
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    border: 1px solid black;
+    display: grid; /*1rst step, named the main container as grid*/
+    grid-gap: 20px; /*gap between each box in the container*/
+    grid-template-columns: repeat(3, 1fr); /* [1fr 1fr 1fr]will have 3 columns; one for the widget 1, the second widget 2 and third for the sidebar*/
+    grid-template-rows: repeat(4,auto); /* numbers of rows i will have. Auto para que se adapte al tamanio de cada fraccion*/
+
+    /*Version 2.0 esta basada en area*/
+    grid-template-areas: "header header header" /*Indicamos abarcara las 3 columnas*/
+                         "contenido contenido sidebar" /*segunda fila*/
+                         "widget-1  widget-2 sidebar"
+                         "footer footer footer";
+}
+
+.contenedor > div,      /*each deach inside container*/
+.contenedor .header,
+.contenedor .contenido,
+.contenedor .sidebar,
+.contenedor .footer {
+
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+
+}
+
+.contenedor .header {
+    background: #12203e;
+    color: #fff;
+    grid-area: header; /*area 1 header*/
+    
+}
+
+.contenedor .contenido{
+    grid-area: contenido;
+    
+}
+
+.contenedor .sidebar {
+    grid-column: 3 / 4 ; /*star colum 3 and finish in 5. the sidebar will not move*/
+    background: #faa43d;
+    text-align: center;
+    min-height: 100px; /*when screen gets smaller*/
+    /*use flexbox to adjust element position*/
+    display: flex;
+    align-items: center; /*vertically*/
+    justify-content: center; /*Horizontally*/
+
+    grid-area: sidebar;
+
+    
+}
+
+.contenedor .widget-1,
+.contenedor .widget-2 {
+    background: #55a8fd;
+    color: #fff;
+    height: 100px;
+    text-align: center;
+    /*apply Flexbox for the fix item*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .footer{
+    background: #12203e;
+    color: #fff;
+    grid-area: footer;
+    
+}
+
+.contenedor .widget-1{
+    grid-area: widget-1;
+}
+
+.contenedor .widget-2{
+    grid-area: widget-2;
+}
+
+/*---Make the content responsive---*/
+
+@media screen and (max-width: 768px){
+
+    .contenedor {
+        grid-template-areas: "header header header"
+                             "contenido contenido contenido"
+                             "sidebar sidebar sidebar"
+                             "widget-1 widget-1 widget-2"
+                             "footer footer footer";
+    }
+
+}
+
+
+/*
+     N O T A S
+
+     Reapeat function miltuple the arguments
+     reapeat(<integer>, <(fr)column> <(fr)row>)
+
+css grid is used for crearing structure while flexbox for we want to adjust element horizontaly or vertically
+
+fr means a fraction of the box.
+*/
+
