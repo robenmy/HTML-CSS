@@ -1,0 +1,72 @@
+.container {
+    border: 5px solid lightseagreen;
+    display: flex;
+    /* Positioning the elements in the container
+    flex-direction: row; /*by difault is a row. Container direction. left to right
+    justify-content: space-around; /*it is always by deafaul at flex-start
+    */
+    justify-content: flex-end;
+}
+
+/*Shrink or grow items in the container*/
+.container > div {
+   flex: 1; 
+   /*it is a shortand for flex-grow flex-shrink flex-basis
+               Better that put the width as 33.3333%*/
+
+}
+/*for put one item twice the others*/
+.container > .search {
+    flex: 2;
+}
+
+/*Positioning a single item
+.logout {
+    margin-left: auto;
+}
+.home {
+    margin-right: auto;
+}
+*/
+
+
+
+
+
+
+
+
+
+
+/*------------------ NOTAS ----------------------------
+Main Axis
+A flex container always has a direction and this direction is horizontal. that's how it layout its items.
+the main axis goes from left to right along the row.
+
+Cross Axis: goes from top to bottom. Vertically.
+We use differents css property to position the items.
+
+this is no always the case. We can flip the direccions of the container by difault is like this: 
+"flex-direction: row;"
+justify-content: flex-start/flex-end center/space-around/space-between/space-evently
+
+Positioning a single item
+.logout {
+    margin-left: auto;
+}
+
+Working with item Horizontaly: justify-content
+--------------------------------
+Working with item verticaly: align-item: flex-start
+-------------------------------
+
+for aligning a single item:
+.logout {
+    align-self: flex-star;
+}
+
+The flex-basis property specifies the initial length of a flexible item.
+flex: 1 is the same as {flex-grow:1 flex-shrink:1 flex-basis:0}
+flex basis >> initial with
+
+*/
